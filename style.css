@@ -733,3 +733,80 @@ footer {
 .blog-read:hover {
   text-decoration: underline;
 }
+
+
+/* ===== MOBILE NAV FIX ===== */
+.hamburger {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: white;
+  margin: 5px 0;
+}
+
+/* mobile menu */
+.nav-links-container {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background: #050509;
+  display: none;
+  flex-direction: column;
+  padding: 15px 20px;
+}
+
+.nav-links-container.active {
+  display: flex;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* desktop reset */
+@media(min-width:900px){
+  .hamburger {
+    display: none;
+  }
+
+  .nav-links-container {
+    position: static;
+    display: block !important;
+    background: none;
+    width: auto;
+    padding: 0;
+  }
+
+  .nav-links {
+    flex-direction: row;
+  }
+}
+
+
+@media(max-width:600px){
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .hero-lead {
+    font-size: 13px;
+  }
+
+  .hero-wrap {
+    gap: 18px;
+  }
+
+  .hero-panel {
+    padding: 14px;
+  }
+}

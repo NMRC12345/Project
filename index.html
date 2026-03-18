@@ -14,12 +14,44 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
+
+
 <body>
+  <!-- ...existing code... -->
   <header>
     <nav class="nav">
       <div class="nav-left">
         <div class="logo-big-wrap">
           <!-- yahan apna logo file path do -->
+          <img src="Images/logo.png" alt="Yug Logic logo" />
+        </div>
+        <div class="brand-lines">
+          <span class="brand-main">Yug Logic</span>
+          <span class="brand-sub">Research · Analysis · Strategy</span>
+        </div>
+      </div>
+      <div class="nav-links-container">
+        <div class="nav-links">
+          <a href="#home" class="active">Home</a>
+          <a href="#services">Services</a>
+          <a href="#surveys">Surveys</a>
+          <a href="#insight">Insight Chamber</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <span class="pill-top">MCA Registered · India</span>
+    </nav>
+  </header>
+  <!-- ...existing code... -->
+  <!-- <header>
+    <nav class="nav">
+      <div class="nav-left">
+        <div class="logo-big-wrap">
           <img src="Images/logo.png" alt="Yug Logic logo" />
         </div>
         <div class="brand-lines">
@@ -36,7 +68,7 @@
       </div>
       <span class="pill-top">MCA Registered · India</span>
     </nav>
-  </header>
+  </header> -->
 
   <main>
     <!-- HERO -->
@@ -433,5 +465,27 @@ Read full article →
     });
 
   </script>
+
+  <script>
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav-links-container');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  // Toggle menu (open/close)
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+
+  // Close menu on link click
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('active');
+
+      // active link highlight
+      navLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+</script>
 </body>
 </html>
