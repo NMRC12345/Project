@@ -253,6 +253,7 @@ section {
   letter-spacing: 0.04em;
   margin-bottom: 12px;
 }
+
 /* 
 .hero-title span {
   background: linear-gradient(120deg, #f7e6b5, #c99139);
@@ -774,7 +775,7 @@ footer {
 }
 
 /* desktop reset */
-@media(min-width:900px){
+@media(min-width:900px) {
   .hamburger {
     display: none;
   }
@@ -793,7 +794,7 @@ footer {
 }
 
 
-@media(max-width:600px){
+@media(max-width:600px) {
   .hero-title {
     font-size: 24px;
   }
