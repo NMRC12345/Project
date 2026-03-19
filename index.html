@@ -386,6 +386,9 @@
       const phone = document.getElementById('phone').value.trim();
       const message = document.getElementById('msg').value.trim();
 
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      const phonePattern = /^[6-9]\d{9}$/;
+
       // ✅ Validation
       if (!name || !email || !phone || !message) {
         showPopup('error', 'Please fill all required fields.');
@@ -393,11 +396,17 @@
       }
 
       // ✅ Email format check
-      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
       if (!email.match(emailPattern)) {
         showPopup('error', 'Please enter a valid email address.');
         return;
       }
+
+      // ✅ Phone number format check
+      if (!phone.match(phonePattern)) {
+        showPopup('error', 'Please enter a valid phone number.');
+        return;
+      }
+
       const formData = new FormData(form);
 
       try {
